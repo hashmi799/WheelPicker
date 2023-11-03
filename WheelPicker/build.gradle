@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'maven-publish'
 }
 
 def libraryGroupId = 'sh.tyy'
@@ -56,4 +57,4 @@ ext {
     PUBLISH_VERSION = libraryVersion
 }
 
-apply from: "${rootProject.projectDir}/release-sonatype.gradle"
+//apply from: "${rootProject.projectDir}/release-sonatype.gradle"
