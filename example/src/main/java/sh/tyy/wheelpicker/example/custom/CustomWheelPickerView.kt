@@ -16,10 +16,8 @@ import sh.tyy.wheelpicker.example.R
 class CustomWheelViewHolder(itemView: View) :
     BaseWheelPickerView.ViewHolder<CustomWheelPickerView.Item>(itemView) {
     private val textView: TextView = itemView.findViewById(R.id.text_view)
-    private val imageView: ImageView = itemView.findViewById(R.id.icon_image_ivew)
     override fun onBindData(data: CustomWheelPickerView.Item) {
         textView.text = data.text
-        imageView.setImageDrawable(data.icon)
     }
 }
 
@@ -38,8 +36,7 @@ class CustomWheelPickerView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : BaseWheelPickerView(context, attrs, defStyleAttr) {
-    data class Item(val id: String, val icon: Drawable?, val text: String)
-
+    data class Item(val text: String)
     private val highlightView: View = run {
         val view = View(context)
         view.background = ContextCompat.getDrawable(context, R.drawable.custom_wheel_highlight_bg)
@@ -50,12 +47,5 @@ class CustomWheelPickerView @JvmOverloads constructor(
 
     init {
         setAdapter(adapter)
-        addView(highlightView)
-        (highlightView.layoutParams as? LayoutParams)?.apply {
-            width = ViewGroup.LayoutParams.MATCH_PARENT
-            height =
-                context.resources.getDimensionPixelSize(R.dimen.custom_wheel_picker_item_height)
-            gravity = Gravity.CENTER_VERTICAL
-        }
     }
 }

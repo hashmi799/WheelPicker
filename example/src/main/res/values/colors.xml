@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="activity_bg">#F1F3F7</color>
-    <color name="custom_wheel_highlight_bg_color">#113700B3</color>
+    <color name="custom_wheel_highlight_bg_color">#7D6BEB</color>
+    <color name="segment">#BFBFBF</color>
 </resources>

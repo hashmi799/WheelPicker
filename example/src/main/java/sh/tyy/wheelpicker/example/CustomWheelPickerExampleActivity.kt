@@ -5,7 +5,6 @@ import android.view.MenuItem
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import sh.tyy.wheelpicker.core.BaseWheelPickerView
 import sh.tyy.wheelpicker.example.custom.CustomWheelPickerView
 
@@ -28,11 +27,6 @@ class CustomWheelPickerExampleActivity : AppCompatActivity(), PickerExample {
         pickerView = findViewById(R.id.custom_picker_view)
         pickerView.adapter.values = (0 until 20).map {
             CustomWheelPickerView.Item(
-                "$it",
-                if (it % 2 == 0) ContextCompat.getDrawable(
-                    this,
-                    R.drawable.search
-                ) else ContextCompat.getDrawable(this, R.drawable.add),
                 "Item-$it"
             )
         }

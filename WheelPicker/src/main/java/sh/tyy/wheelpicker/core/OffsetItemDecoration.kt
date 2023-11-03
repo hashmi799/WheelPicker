@@ -13,7 +13,7 @@ internal class OffsetItemDecoration : RecyclerView.ItemDecoration() {
         state: RecyclerView.State
     ) {
         super.getItemOffsets(outRect, view, parent, state)
-        val offset = (parent.height - view.layoutParams.height) / 2
+        val offset = (parent.height - view.layoutParams.height)
         if (parent.getChildAdapterPosition(view) == 0) {
             (view.layoutParams as ViewGroup.MarginLayoutParams).topMargin = 0
             outRect.top = offset

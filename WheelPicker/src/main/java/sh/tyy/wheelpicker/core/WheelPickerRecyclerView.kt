@@ -237,13 +237,13 @@ class WheelPickerRecyclerView @JvmOverloads constructor(
         val factor = (centerY - childCenterY) * 1f / centerY
         val alphaFactor = 1 - 0.7f * abs(factor)
         child.alpha = alphaFactor * alphaFactor * alphaFactor
-        val scaleFactor = 1 - 0.3f * abs(factor)
-        child.scaleX = scaleFactor
-        child.scaleY = scaleFactor
+        //val scaleFactor = 1 - 0.3f * abs(factor)
+        //child.scaleX = scaleFactor
+        //child.scaleY = scaleFactor
 
-        val rotateRadius: Float = (2.0F * centerY / PI).toFloat()
-        val rad = (centerY - childCenterY) * 1f / rotateRadius
-        val offsetY = centerY - childCenterY - rotateRadius * sin(rad) * 1.3F
+        val rotateRadius: Float = (1.5F * centerY / PI).toFloat()
+        val rad = (centerY - childCenterY) * 0.8f / rotateRadius
+        val offsetY = centerY - childCenterY - rotateRadius * sin(rad) * 1.2F
         child.translationY = offsetY
 
         canvas.save()

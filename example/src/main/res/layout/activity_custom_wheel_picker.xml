@@ -25,18 +25,38 @@
         android:layout_marginBottom="8dp"
         tools:text="item" />
 
-    <FrameLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/wheel_picker_bg"
         android:paddingHorizontal="24dp"
         android:paddingVertical="8dp">
 
+        <TextView
+            android:id="@+id/tvTop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/custom_wheel_highlight_bg"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/custom_picker_view"
+            app:layout_constraintEnd_toEndOf="@+id/custom_picker_view"
+            app:layout_constraintStart_toStartOf="@+id/custom_picker_view"
+            app:layout_constraintTop_toTopOf="@+id/custom_picker_view" />
+
         <sh.tyy.wheelpicker.example.custom.CustomWheelPickerView
             android:id="@+id/custom_picker_view"
-            android:layout_width="310dp"
-            android:layout_height="210dp" />
-    </FrameLayout>
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
